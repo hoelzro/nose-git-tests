@@ -23,4 +23,5 @@ run by nosetests
             'git-tests = nose_git_tests:GitTests'
         ],
     },
+    install_requires=['subprocess32'],
 )
