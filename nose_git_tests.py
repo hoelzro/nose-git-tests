@@ -1,5 +1,10 @@
 import os
-import subprocess32 as subprocess
+import sys
+
+if sys.version_info.major == 3:
+    import subprocess
+else:
+    import subprocess32 as subprocess
 
 from nose.plugins.base import Plugin
 from nose.selector import Selector
