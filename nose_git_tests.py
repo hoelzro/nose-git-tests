@@ -36,3 +36,4 @@ class GitTests(Plugin):
 
     def prepareTestLoader(self, loader):
         loader.selector = GitOnlySelector(loader.config)
+        return loader
