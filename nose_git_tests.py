@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+
 import os
 import sys
 
@@ -18,7 +20,7 @@ class GitOnlySelector(Selector):
         with open(os.devnull, 'w') as nowhere:
             try:
                 output = subprocess.check_output(['git', 'ls-files', filename], stderr=nowhere)
-                return output != ''
+                return output != b''
             except subprocess.CalledProcessError:
                 return False
 
