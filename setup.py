@@ -1,4 +1,10 @@
 from setuptools import setup
+import sys
+
+requirements = []
+
+if sys.version_info.major != 3:
+    requirements.append('subprocess32')
 
 setup(
     name='nose-git-tests',
@@ -23,5 +29,5 @@ run by nosetests
             'git-tests = nose_git_tests:GitTests'
         ],
     },
-    install_requires=['subprocess32'],
+    install_requires=requirements,
 )
